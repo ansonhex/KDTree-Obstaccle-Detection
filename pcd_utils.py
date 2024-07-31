@@ -14,11 +14,10 @@ def load_pcd(file_path, pcd=False):
     """
     This function loads the point cloud data from the file path.
     """
-    pcd = o3d.io.read_point_cloud(file_path)
-    points = np.asarray(pcd.points)
+    point_cloud = o3d.io.read_point_cloud(file_path)
     if pcd:
-        return pcd
-    return points
+        return point_cloud
+    return np.asarray(point_cloud.points)   # points
 
 
 def visualize_pcd(points):

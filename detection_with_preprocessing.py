@@ -41,18 +41,18 @@ def segment_plane(pcd, distance_threshold=0.2, ransac_n=3, num_iterations=100):
 
 
 if __name__ == "__main__":
-    points = pcd_utils.load_pcd("data/demo.pcd")
-    filtered_pcd = apply_voxel_grid_filter(o3d.geometry.PointCloud(o3d.utility.Vector3dVector(points)))
+    pcd = pcd_utils.load_pcd("data/demo.pcd", pcd=True)
+    filtered_pcd = apply_voxel_grid_filter(pcd)
     ground, obstacles = segment_plane(filtered_pcd)
 
-    ikd_tree = KDTree()
+    kd_tree = KDTree()
     obstacle_points = np.asarray(obstacles.points)
     point_objects = [Point(x, y, z) for x, y, z in obstacle_points]
-    ikd_tree.build_tree(point_objects)
+    kd_tree.build_tree(point_objects)
 
     # Search for nearest points, at center 0, 0, 0
     target_point = np.array([0, 0, 0])
-    nearest_points, _ = ikd_tree.nearest_search(target_point, k=2000)
+    nearest_points, _ = kd_tree.nearest_search(target_point, k=2000)
 
     # Visualize the obstacle detected
     obstacle_points = np.array([p.data for p in nearest_points])
