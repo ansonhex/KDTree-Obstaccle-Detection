@@ -1,5 +1,7 @@
 # KDTree Obstacle Detectcion
 
+
+![detecion workflow](assets/workflow.gif)
 This is an exploration using KDTree for obstacle detection with PCD (Point Cloud DAta) using Python. It includes a simple implementation of a KDTree class along with various preprocessing techniques and comparisons with other search methods.
 
 ## Requirement
