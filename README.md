@@ -23,4 +23,18 @@ pip install -r requirements.txt
 * Basic workflow of obstacle detection
 * Comparison with Grid-based nearest search
 
+## Reference
+
+* Inspired by [ikd-Tree](https://github.com/hku-mars/ikd-Tree)
+* LiDAR PCD Data & Preprocessing  Techniques from [Lidar-Obstacle-Detection](https://github.com/olpotkin/Lidar-Obstacle-Detection)
+
+```
+@article{cai2021ikd,
+  title={ikd-Tree: An Incremental KD Tree for Robotic Applications},
+  author={Cai, Yixi and Xu, Wei and Zhang, Fu},
+  journal={arXiv preprint arXiv:2102.10808},
+  year={2021}
+}
+```
+
 ## LICENSE
