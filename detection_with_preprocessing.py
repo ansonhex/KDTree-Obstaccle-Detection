@@ -8,7 +8,6 @@ such as voxel grid filter and plane segmentation.
 
 import numpy as np
 from KDTree import KDTree, Point
-import open3d as o3d
 import pcd_utils
 
 
