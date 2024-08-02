@@ -44,6 +44,15 @@ if __name__ == "__main__":
     filtered_pcd = apply_voxel_grid_filter(pcd)
     ground, obstacles = segment_plane(filtered_pcd)
 
+    # Visualize the point cloud data
+    # 1. Original point cloud data
+    # 2. Voxeled point cloud data
+    # 3. Obstacles detected using plane segmentation
+
+    pcd_utils.visualize_pcd(np.asarray(pcd.points))
+    pcd_utils.visualize_pcd(np.asarray(filtered_pcd.points))
+    pcd_utils.visualize_pcd(np.asarray(obstacles.points))
+
     kd_tree = KDTree()
     obstacle_points = np.asarray(obstacles.points)
     point_objects = [Point(x, y, z) for x, y, z in obstacle_points]
